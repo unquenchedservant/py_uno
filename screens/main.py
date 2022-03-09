@@ -28,9 +28,9 @@ def screen(stdscr):
     profile_path = os.getcwd() + "profile/"
     title_str = "Uno Game v0.0.1a"
     status_msg = "Written by Jonathan Thorne | © 2022 | Use arrow keys to navigate || Press esc to quit"
-    option_1  = "1. Play Quick Game" #Quick, semi-traditional, gameplay. no scores. 
-    option_2   = "2. Play Full Game"  #full game, full rules. 
-    option_3   = "3. Statistics" #will contain option to delete profile in here.
+    option_1  = "1. Play Quick Game (Working)" #Quick, semi-traditional, gameplay. no scores. 
+    option_2   = "2. Play Full Game (Coming soon)"  #full game, full rules. 
+    option_3   = "3. Statistics (Coming soon)" #will contain option to delete profile in here.
     option_4   = "4. Exit" 
     stdscr.clear()
     while(True):
