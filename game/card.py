@@ -12,15 +12,15 @@ class Card:
     def toString(self):
         color = None
         number = None
-        if self.cardColor == "r":
+        if self.cardColor == "red":
             color = "Red"
-        elif self.cardColor == "b":
+        elif self.cardColor == "blue":
             color = "Blue"
-        elif self.cardColor == "g":
+        elif self.cardColor == "green":
             color = "Green"
-        elif self.cardColor == "y":
+        elif self.cardColor == "yellow":
             color = "Yellow"
-        elif self.cardColor == "a":
+        elif self.cardColor == "any":
             color = "Any"
         if self.cardNumber <= 9:
             number = str(self.cardNumber)
