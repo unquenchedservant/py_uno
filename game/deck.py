@@ -1,40 +1,43 @@
+from game.card import Card
+import random
+
 class Deck:
     #going to need an array/list set up for cards
     #array/list for drawPile. Probably can go in init?
 
     def __init__(self):
-        #initialize cards
-        #add cards. This is going to be a lot of fun. 
-        #red, blue, green, yellow cards. 1 0, 2 of every other except card 13 and 14
-        pass 
-    
+        self.cards = []
+        self.createDeck()
+
+    def createDeck(self):
+        self.addColor("red")
+        self.addColor("blue")
+        self.addColor("green")
+        self.addColor("yellow")
+        self.shuffleDeck()
+    def addColor(self,color):
+        self.cards.append(Card(0, color))
+        for i in range(1,12):
+            print("hello " + i)
+            self.cards.append(Card(i, color))
+            self.cards.append(Card(i, color))
+        
     def shuffleDeck(self):
-        pass
-        #look up python shuffle library similar to Collections.shuffle(cards)
-        #do this twice
+        random.shuffle(self.cards)
+        random.shuffle(self.cards)
         
     def getLast(self):
-        pass
-        #return cards.get(cards.size()-1) but in python
+        return self.cards[len(self.cards) - 1]
     
     def addCard(self, addedCard):
-        self.add(addedCard)
+        self.cards.append(addedCard)
 
-    def printDeck():
-        pass
-        #this is where we will figure out how to display the cards on to the curses screen
+    def printDeck(self):
+        for i in range (0, len(self.cards)):
+            print(self.cards[i].toString)
     
-        ###
-        # java: 
-        # for(int i = 0; i < cards.size; i++){
-        #   Card sd = new Card(cards.get(i).getCardNumber, cards.get(i).getCardColor());
-        #   System.out.println(sd.toString())
-        # }
-    
-    def getSize():
-        pass
-        #JAVA return cards.size();
+    def getSize(self):
+        return len(self.cards) - 1
 
-    def removeLast():
-        pass
-        #JAVA cards.remove(cards.size()-1)
+    def removeLast(self):
+        self.cards.remove(len(self.cards) - 1)
