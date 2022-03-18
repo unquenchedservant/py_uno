@@ -3,6 +3,7 @@ import logging
 import os
 import sys
 from utilities import menu as m
+from screens import play
 
 def screen(stdscr):
     curses.start_color()
@@ -33,6 +34,7 @@ def screen(stdscr):
     option_3   = "3. Statistics (Coming soon)" #will contain option to delete profile in here.
     option_4   = "4. Exit" 
     stdscr.clear()
+    stdscr.refresh()
     while(True):
         m.title(stdscr, title_str)
         m.status_bar(stdscr, status_msg)
@@ -55,11 +57,11 @@ def screen(stdscr):
                 cur_y = 1
         elif k == 10 or k == curses.KEY_RIGHT:
             if cur_y == 1:
+                play.start(False) #fullGame = False
                 logging.warning("Play quick game")
-                sys.exit()
             elif cur_y == 2:
+                play.start(True) #fullGame = True
                 logging.warning("play full game")
-                sys.exit()
             elif cur_y == 3:
                 logging.warning("statistics")
                 sys.exit()
